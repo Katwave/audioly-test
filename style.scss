@@ -1,0 +1,266 @@
+// Variables
+$main: rgb(41, 250, 138);
+$dark: rgb(12, 19, 15);
+$grey: rgb(151, 156, 153);
+
+// Mixins
+@mixin center($dir) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $dir;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  background-color: $grey;
+  width: 100%;
+  height: 100vh;
+  @include center(column);
+}
+
+.container {
+  position: relative;
+  width: 60%;
+  height: 80%;
+  @include center(column);
+  background-color: transparent;
+  //   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+  @media screen and (max-width: 1500px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 1200px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 900px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 600px) {
+    width: 95%;
+  }
+  @media screen and (max-height: 450px) {
+    height: 95%;
+  }
+  border: #555 solid 1px;
+
+  .head {
+    margin-bottom: 20px;
+    width: 100%;
+    @include center(row);
+    justify-content: flex-start;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);
+    padding: 4px;
+    background-color: #777;
+    color: #fff;
+
+    h1 {
+      font-size: 20px;
+      width: fit-content;
+      text-align: center;
+    }
+
+    .upload {
+      flex: 1;
+      height: 100%;
+      @include center(row);
+      justify-content: flex-start;
+
+      input[type="file"] {
+        display: none;
+      }
+      label {
+        background-color: #555;
+        height: 100%;
+        padding: 0px 12px;
+        @include center(row);
+        border-radius: 99px;
+        font-size: 14px;
+        margin-left: 10px;
+        cursor: pointer;
+
+        i {
+          margin-right: 4px;
+        }
+      }
+    }
+
+    #playing {
+      width: 40%;
+      @include center(row);
+      background-color: transparent;
+      margin-left: 10px;
+      text-align: right;
+      display: block;
+      white-space: nowrap;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: $main;
+      font-size: 14px;
+    }
+  }
+
+  .controls {
+    // background-color: #777;
+    @include center(row);
+    gap: 20px;
+    padding: 12px;
+    border-radius: 99px;
+    border: 1px solid #777;
+
+    button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+      font-size: 20px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      transition: all 300ms ease-in-out;
+      background-color: transparent;
+      color: #222;
+      @media screen and (max-width: 600px) {
+        width: 30px;
+        height: 30px;
+      }
+      &:hover {
+        color: $main;
+      }
+      //   border: 1px solid #222;
+    }
+    #play {
+      color: #fff;
+      background-color: #222;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.7);
+      @media screen and (max-width: 600px) {
+        width: 50px;
+        height: 50px;
+      }
+      &:hover {
+        box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.9),
+          inset 1px 0px 1px rgba(255, 255, 255, 0.9);
+      }
+    }
+  }
+
+  .ranges {
+    width: 100%;
+    @include center(column);
+    padding: 0px 10px;
+
+    .volume-container {
+      width: 100%;
+      @include center(row);
+      p {
+        margin-right: 10px;
+      }
+      #volume[type="range"] {
+        z-index: 100;
+        //   position: fixed;
+        //   bottom: 0;
+        //   left: 0;
+        -webkit-appearance: none;
+        width: 100%;
+        height: 3px;
+        outline: none;
+        background: transparent;
+        opacity: 0.9;
+        cursor: pointer;
+        box-shadow: inset -6px -6px 24px rgba(221, 223, 221, 0.7);
+
+        &:hover {
+          opacity: 1;
+        }
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 15px;
+          height: 15px;
+          border-radius: 50px;
+          border-right: 3px solid $main;
+          background: $dark;
+          //   visibility: hidden;
+          cursor: pointer;
+          box-shadow: 6px 6px 30px "violet";
+        }
+      }
+    }
+  }
+
+  .times {
+    width: 100%;
+    @include center(row);
+    padding: 0px 10px;
+    gap: 50px;
+    .line {
+      width: 1px;
+      height: 100%;
+      background-color: #555;
+    }
+    h3 {
+      font-size: 16px;
+    }
+  }
+
+  .seek-container {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    margin-top: 50px;
+    canvas {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      z-index: 2;
+    }
+    #seek[type="range"] {
+      z-index: 100;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      -webkit-appearance: none;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      background: transparent;
+      opacity: 0.9;
+      cursor: pointer;
+      box-shadow: inset -6px -6px 24px rgba(56, 85, 49, 0.3);
+
+      &:hover {
+        opacity: 1;
+      }
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 1px;
+        height: 30vh;
+        background: transparent;
+        visibility: hidden;
+        cursor: pointer;
+        box-shadow: 6px 6px 30px "violet";
+      }
+    }
+
+    #fillSlider {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      width: 0px;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+    }
+  }
+}

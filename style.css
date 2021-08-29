@@ -1,0 +1,418 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #979c99;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container {
+  position: relative;
+  width: 60%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: transparent;
+  overflow: hidden;
+  border: #555 solid 1px;
+}
+
+@media screen and (max-width: 1500px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .container {
+    height: 95%;
+  }
+}
+
+.container .head {
+  margin-bottom: 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);
+          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);
+  padding: 4px;
+  background-color: #777;
+  color: #fff;
+}
+
+.container .head h1 {
+  font-size: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+}
+
+.container .head .upload {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.container .head .upload input[type="file"] {
+  display: none;
+}
+
+.container .head .upload label {
+  background-color: #555;
+  height: 100%;
+  padding: 0px 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-radius: 99px;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.container .head .upload label i {
+  margin-right: 4px;
+}
+
+.container .head #playing {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: transparent;
+  margin-left: 10px;
+  text-align: right;
+  display: block;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #29fa8a;
+  font-size: 14px;
+}
+
+.container .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 20px;
+  padding: 12px;
+  border-radius: 99px;
+  border: 1px solid #777;
+}
+
+.container .controls button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  background-color: transparent;
+  color: #222;
+}
+
+@media screen and (max-width: 600px) {
+  .container .controls button {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.container .controls button:hover {
+  color: #29fa8a;
+}
+
+.container .controls #play {
+  color: #fff;
+  background-color: #222;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.7);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (max-width: 600px) {
+  .container .controls #play {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.container .controls #play:hover {
+  -webkit-box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.9), inset 1px 0px 1px rgba(255, 255, 255, 0.9);
+          box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.9), inset 1px 0px 1px rgba(255, 255, 255, 0.9);
+}
+
+.container .ranges {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0px 10px;
+}
+
+.container .ranges .volume-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.container .ranges .volume-container p {
+  margin-right: 10px;
+}
+
+.container .ranges .volume-container #volume[type="range"] {
+  z-index: 100;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  outline: none;
+  background: transparent;
+  opacity: 0.9;
+  cursor: pointer;
+  -webkit-box-shadow: inset -6px -6px 24px rgba(221, 223, 221, 0.7);
+          box-shadow: inset -6px -6px 24px rgba(221, 223, 221, 0.7);
+}
+
+.container .ranges .volume-container #volume[type="range"]:hover {
+  opacity: 1;
+}
+
+.container .ranges .volume-container #volume[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  border-right: 3px solid #29fa8a;
+  background: #0c130f;
+  cursor: pointer;
+  -webkit-box-shadow: 6px 6px 30px "violet";
+          box-shadow: 6px 6px 30px "violet";
+}
+
+.container .times {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 0px 10px;
+  gap: 50px;
+}
+
+.container .times .line {
+  width: 1px;
+  height: 100%;
+  background-color: #555;
+}
+
+.container .times h3 {
+  font-size: 16px;
+}
+
+.container .seek-container {
+  position: relative;
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-top: 50px;
+}
+
+.container .seek-container canvas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.container .seek-container #seek[type="range"] {
+  z-index: 100;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  background: transparent;
+  opacity: 0.9;
+  cursor: pointer;
+  -webkit-box-shadow: inset -6px -6px 24px rgba(56, 85, 49, 0.3);
+          box-shadow: inset -6px -6px 24px rgba(56, 85, 49, 0.3);
+}
+
+.container .seek-container #seek[type="range"]:hover {
+  opacity: 1;
+}
+
+.container .seek-container #seek[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1px;
+  height: 30vh;
+  background: transparent;
+  visibility: hidden;
+  cursor: pointer;
+  -webkit-box-shadow: 6px 6px 30px "violet";
+          box-shadow: 6px 6px 30px "violet";
+}
+
+.container .seek-container #fillSlider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 0px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="./font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="head">
+        <h1>audiofy</h1>
+        <div class="upload">
+          <input type="file" name="file" id="file" />
+          <label for="file">
+            <i class="fa fa-cloud-upload" aria-hidden="true"> </i> Upload</label
+          >
+        </div>
+        <p id="playing">Upload audio file to start!</p>
+      </div>
+      <div class="controls">
+        <button id="loop">
+          <i class="fa fa-repeat" aria-hidden="true"> </i>
+        </button>
+        <button id="prev">
+          <i class="fa fa-step-backward" aria-hidden="true"> </i>
+        </button>
+        <button id="play">
+          <i class="fa fa-play" aria-hidden="true"> </i>
+        </button>
+        <button id="nxt">
+          <i class="fa fa-step-forward" aria-hidden="true"> </i>
+        </button>
+        <button id="mute">
+          <i class="fa fa-volume-up" aria-hidden="true"> </i>
+        </button>
+      </div>
+      <br />
+      <div class="ranges">
+        <div class="volume-container">
+          <p><i class="fa fa-volume-up" aria-hidden="true"> </i></p>
+          <input
+            type="range"
+            name="volume"
+            id="volume"
+            min="0"
+            max="100"
+            value="100"
+            step="1"
+          />
+        </div>
+      </div>
+      <br />
+
+      <div class="times">
+        <h3><span id="currentTime">00:00</span></h3>
+        <span class="line"></span>
+        <h3><span id="duration">00:00</span></h3>
+      </div>
+
+      <div class="seek-container">
+        <input
+          type="range"
+          name="seek"
+          id="seek"
+          min="0"
+          max="100"
+          value="100"
+          step="1"
+        />
+        <div id="fillSlider"></div>
+        <canvas> </canvas>
+      </div>
+    </div>
+    <script src="./Audioly.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
